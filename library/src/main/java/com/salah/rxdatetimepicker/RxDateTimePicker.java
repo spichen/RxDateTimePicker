@@ -27,6 +27,7 @@ public class RxDateTimePicker implements DatePickerDialog.OnDateSetListener,Time
     private final static int TYPE_DATE_ONLY = 2;
     private final static int TYPE_TIME_ONLY = 3;
     private int TYPE = TYPE_DATE_AND_TIME;
+    private boolean is24HourView = true;
 
     private MaybeSubject<Date> subject;
 
@@ -46,6 +47,11 @@ public class RxDateTimePicker implements DatePickerDialog.OnDateSetListener,Time
 
     public RxDateTimePicker pickTimeOnly(){
         TYPE = TYPE_TIME_ONLY;
+        return this;
+    }
+
+    public RxDateTimePicker is24HourView(boolean is24HourView){
+        this.is24HourView = is24HourView;
         return this;
     }
 
@@ -70,7 +76,7 @@ public class RxDateTimePicker implements DatePickerDialog.OnDateSetListener,Time
                 this,
                 calendar.get(Calendar.HOUR_OF_DAY),
                 calendar.get(Calendar.MINUTE),
-                true)
+                is24HourView)
                 .show();
     }
 
