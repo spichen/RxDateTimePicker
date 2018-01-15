@@ -1,2 +1,2 @@
 # RxDateTimePicker
-RxJava extension for Android to pick date and time
+An easy way to pick date and time on Android using RxJava2
