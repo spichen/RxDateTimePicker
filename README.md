@@ -21,7 +21,6 @@ Kotlin :
 ```kotlin
 RxDateTimePicker
       .with(this)
-      .pickDateOnly()
       .show()
       .subscribe { date -> Log.d("Date",date.toString()) }
 ```
@@ -30,8 +29,6 @@ Java :
 ```java
 RxDateTimePicker
       .with(this)
-      .pickTimeOnly()
-      .is24HourView(false)
       .show()
       .subscribe(new Consumer<Date>() {
                   @Override
@@ -39,4 +36,13 @@ RxDateTimePicker
                 	  Log.d("Date",date.toString());
                   }
                 });
+```
+By default both date and time picker dialog will show. You can specify date only or time only picker as shown below
+
+```kotlin
+RxDateTimePicker
+      .with(this)
+      .pickTimeOnly() // or .pickDateOnly()
+      .show()
+      .subscribe { date -> Log.d("Date",date.toString()) }
 ```
