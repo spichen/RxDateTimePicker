@@ -17,11 +17,27 @@ dependencies {
 
 ## Usage
 
+Simple usage :
+
 ```kotlin
 RxDateTimePicker
-      .with(this@MainActivity)
+      .with(this)
       .pickDateOnly()
       .show()
-      .flatMap { date -> RxDateConverters.toString(date,"dd-MM-yyyy") }
-      .subscribe { date -> tv_date_only.text = date }
+      .subscribe { date -> Log.d("Date",date.toString()) }
+```
+
+```java
+
+ RxDateTimePicker
+       .with(this)
+       .pickTimeOnly()
+       .is24HourView(false)
+       .show()
+       .subscribe(new Consumer<Date>() {
+         @Override
+         public void accept(@NonNull Date date) throws Exception {
+         	Log.d("Date",date.toString());
+         }
+       });
 ```
