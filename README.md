@@ -17,11 +17,9 @@ dependencies {
 
 ## Usage
 
-Simple usage :
-
 ```kotlin
 RxDateTimePicker
-      .with(this)
+      .with(this@MainActivity)
       .pickDateOnly()
       .show()
       .subscribe { date -> Log.d("Date",date.toString()) }
@@ -35,9 +33,9 @@ RxDateTimePicker
        .is24HourView(false)
        .show()
        .subscribe(new Consumer<Date>() {
-         @Override
-         public void accept(@NonNull Date date) throws Exception {
-         	Log.d("Date",date.toString());
-         }
-       });
+                   @Override
+                   public void accept(@NonNull Date date) throws Exception {
+                   		Log.d("Date",date.toString());
+                   }
+                 });
 ```
