@@ -1,3 +1,5 @@
+ [ ![Download](https://api.bintray.com/packages/salah49/maven/RxDateTimePicker/images/download.svg) ](https://bintray.com/salah49/maven/RxDateTimePicker/_latestVersion)
+
 # RxDateTimePicker
 An easy way to pick date and time on Android using RxJava2
 
